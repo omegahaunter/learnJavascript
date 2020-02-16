@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Click JavaScript</title>
+    
+</head>
+
+<body>
+    <h1 id="heading">(Ball)</h1>
+    <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+    <script>
+        $("html").click(function(event) {
+            $("#heading").offset({
+                left:event.pageX,
+                top: event.pageY
+            });
+        });
+    </script>
+    
+</body>
+
+</html>

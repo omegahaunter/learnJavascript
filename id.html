@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ID</title>
+</head>
+
+<body>
+    <h1 id="main-heading">ID Test Page</h1>
+    <p id="message">What are you doing here?</p>
+    
+    <script>
+    var heading= document.getElementById("main-heading");
+    alert(heading.innerHTML);
+    
+    var newHeading = prompt("what should the title be ?");
+    heading.innerHTML = newHeading;
+    </script>
+    
+</body>
+
+</html>

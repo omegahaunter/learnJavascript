@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lines</title>
+    
+</head>
+
+<body>
+    <canvas id="canvas" width="2000" height="2000"></canvas>
+    <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+    <script>
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+        ctx.lineWidth = 4;
+
+        //head
+        var x=100;
+        var y=10;
+        var headLength=50;
+        var headWidth=50;
+        ctx.strokeRect(x, y, headLength, headWidth);       
+
+        var bodyX=x+headLength;
+        var bodyY=y+(headWidth/2);
+        var bodyLength=2;
+        var bodyWidth=200;
+        ctx.strokeRect(bodyX, bodyY, bodyLength, bodyWidth);       
+
+
+
+    </script>
+    
+</body>
+
+</html>

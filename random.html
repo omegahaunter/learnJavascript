@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Random Insult Generator</title>
+</head>
+
+<body>
+    <h1>Random Insult Generator</h1>
+    <p>You wouldn't want to come here!</p>
+    
+    
+    <script>
+   var randomBodyParts=["Face", "Nose", "Hair"];
+        var randomAdjectives=["Smelly", "Boring", "Stupid"];
+        var randomWords=["Fly", "Marmot", "Stick", "Monkey", "Rat"];
+
+        var pickRandomWord=function(words) {
+            return words[Math.floor(Math.random()*words.length)];
+        };
+        
+
+var randomString="Your " +pickRandomWord(randomBodyParts)+ " is like a "+ pickRandomWord(randomAdjectives)+ " "+ pickRandomWord(randomWords)+ "!!!";
+alert(randomString);
+ </script>
+</body>
+
+</html>

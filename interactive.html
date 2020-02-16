@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Interactive programming</title>
+    
+</head>
+
+<body>
+    <h1 id="heading">(Ball)</h1>
+    <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+    
+<script>
+        var leftOffset= 0;
+        var topOffset = 0;
+
+        var moveHeading=function(){
+            $("#heading").offset({top:topOffset,left:leftOffset});
+
+            if(topOffset==0){
+                leftOffset++;
+            } 
+            if(leftOffset==200){
+                topOffset++;
+            }
+            if(topOffset==200){
+                leftOffset--;
+            }
+            if(leftOffset==0){
+                topOffset--;
+            }
+  
+        };
+
+        setInterval(moveHeading, 30);
+
+
+
+    </script>
+    
+</body>
+
+</html>

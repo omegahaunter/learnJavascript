@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Bouncing Ball</title>
+</head>
+
+<body>
+    <canvas id="canvas" width="700" height="700"></canvas>
+    <script>
+        var canvas = document.getElementById("canvas"); 
+        var ctx = canvas.getContext("2d");
+
+        var canvasLength=700;
+        var canvasWidth=700;
+        var ballSize = 9;
+
+        
+        //Ball
+        var Ball=function() {
+            this.x=100;
+            this.y=100;
+            this.xSpeed=Math.random() *19;
+            this.ySpeed=Math.random() *19;
+        };
+        
+        //Circle
+        var circle=function(x,y,radius,fillCircle) {
+            ctx.beginPath();
+            ctx.arc(x,y,radius,Math.PI*2, false);
+            if (fillCircle) {
+                ctx.fillStyle="Blue";
+                ctx.fill()
+            } else {
+                ctx.stroke();
+            }
+        };
+
+        //Draw Ball
+        Ball.prototype.draw=function() {
+            circle(this.x, this.y, ballSize, true);
+        };
+        
+        //Moving Ball
+        Ball.prototype.move=function() {
+            this.x +=this.xSpeed;
+            this.y +=this.ySpeed;
+        };
+
+        //Check Collision
+        Ball.prototype.checkCollision=function() {
+            if(this.x<0|| this.x>canvasLength) {
+                    ctx.fillStyle="Red";
+
+                this.xSpeed=-this.xSpeed;
+            }
+            if(this.y<0||this.y>canvasWidth) {
+                this.ySpeed=-this.ySpeed;
+                ctx.fillStyle="Green";
+
+            }
+        };
+
+        //Ball Animation
+
+
+        var ball=new Ball();
+        var ball2=new Ball();
+        var ball3=new Ball();
+        var ball4=new Ball();
+        var ball5=new Ball();
+
+        setInterval(function() {
+            ctx.clearRect(0,0,canvasLength,canvasWidth);
+
+            ball.draw();
+            ball.move();
+            ball.checkCollision();
+            ball2.draw();
+            ball2.move();
+            ball2.checkCollision();
+            ball3.draw();
+            ball3.move();
+            ball3.checkCollision();
+            ball4.draw();
+            ball4.move();
+            ball4.checkCollision();
+            ball5.draw();
+            ball5.move();
+            ball5.checkCollision();
+
+            ctx.strokeRect(0,0,canvasLength,canvasWidth);
+        },30);
+
+    </script>
+</body>
+
+</html>

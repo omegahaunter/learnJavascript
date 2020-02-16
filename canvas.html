@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Canvas</title>
+    
+</head>
+
+<body>
+    <canvas id="canvas" width="2000" height="2000"></canvas>
+    <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+    <script>
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+        
+        //flagpole
+        ctx.lineWidth=2;
+        ctx.fillStyle="Brown";
+        ctx.fillRect(125, 30, 250, 150);
+       
+        //flag
+        ctx.fillStyle="Orange";
+        ctx.fillRect(125, 30, 250, 50);
+        ctx.fillStyle="White";
+        ctx.fillRect(125, 80, 250, 50);
+        ctx.fillStyle="Green";
+        ctx.fillRect(125, 130, 250, 50);
+
+        //flag outline
+        ctx.lineWidth=3;
+        ctx.strokeRect(120, 30, 5, 400);
+
+        //dharma chakra
+        ctx.lineWidth=2;
+        ctx.strokeStyle="Black";
+        ctx.beginPath();
+        ctx.arc(250, 105, 24, 0, Math.PI*2, false);
+        ctx.stroke();
+
+        ctx.strokeStyle="DarkBlue";
+        ctx.beginPath();
+        ctx.moveTo(250,105);
+        ctx.lineTo(250,80);
+        ctx.moveTo(250,105);
+        ctx.lineTo(250, 85);
+        ctx.stroke();
+
+
+
+    </script>
+    
+</body>
+
+</html>
